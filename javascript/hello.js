@@ -66,6 +66,10 @@ console.log(a);
 
 // Schleifen: for Schleife
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i<10; i++) {
     console.log('Schleife $(i)');
+}
+for (let index = 0; participants < Array.length; j++) {
+    const participants = participants[j];
+    console.log('Teilnehmer*in ${participant}');
 }
