@@ -114,3 +114,5 @@ birthYears.forEach(year => {
 
 let firstParagraph = document.querySelector("#pFirst");
 console.log(firstParagraph);
+// firstParagraph.remove();
+firstParagraph.innerHTML = "Test";
