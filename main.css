@@ -1,0 +1,94 @@
+body {
+    /*ein Kommentar; */
+    max-width: 1280px;
+    margin: atuo;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+
+    text-align: center;
+}
+
+header p {
+
+    font-size: 0.8em;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 1em;
+    margin-top: -3em;
+}
+
+.white,
+white a:link,
+.white a:visited {
+    color: antiquewhite;
+}
+
+header nav img {
+    border-radius: 50%;
+}
+
+a:link,
+a:visited {
+    color: black;
+}
+
+header nav address {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+main {
+    max-width: 70%;
+    margin: auto;
+}
+
+main p {
+    text-align: justify;
+    font-family: 'Liu Jian Mao Cao', cursive;
+
+
+}
+
+main figure {
+    margin-left: 0;
+    width: 100%;
+}
+
+main figure img {
+    width: 100%;
+    border: 1px solid black;
+}
+
+#map {
+    width: 100%;
+    height: 360px;
+    border: 1px solid gray;
+}
+
+main ul {
+    list-style-type: circle;
+
+}
+
+footer {
+    width: 100%;
+    padding: 1em 0 3em 0;
+}
+
+footer.back {
+    float: left;
+}
+
+footer.next {
+    float: right;
+}
+
+@media screen and(max-width: 900px){
+    max-width: 90%;
+}
+
+header img.banner{
+    width: 100vw;
+}
