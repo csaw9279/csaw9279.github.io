@@ -33,12 +33,12 @@ console.log("über 18?", age > 18);
 
 // Arrays/Listen
 
-let participants = ["John", "Jane", "Max"];
+let participants = [ "John", "Jane", "Max" ];
 console.log(participants);
 console.log("Einträge im Array: ", participants.length);
 console.log(participants[2]);
 
-let gameHighscores = [2099, 3010, 3333, 5000];
+let gameHighscores = [2099, 3010, 3333, 5000 ];
 console.log(gameHighscores);
 
 // Objekte
@@ -57,8 +57,8 @@ console.log(user);
 
 let a = 2;
 let b = 4;
-console.log(a + b);
-console.log(b / (a - 1));
+console.log(a+b);
+console.log(b/(a-1));
 a++;
 console.log(a);
 
@@ -76,7 +76,7 @@ console.log(a);
 
 // Schleifen: for Schleife
 
-for (let i = 0; i < 10; i++) {
+for (let i=0; i<10; i++) {
     console.log(`Schleife ${i}`);
 }
 
@@ -105,28 +105,17 @@ function calcAge(birthYear) {
 console.log(`Max ist ${calcAge(1977)} Jahre alt (ca.)`);
 console.log(`John ist ${calcAge(1988)} Jahre alt (ca.)`);
 
-let birthYears = [1964, 1977, 1980, 2001, 2004];
+let birthYears = [ 1964, 1977, 1980, 2001, 2004 ];
 console.log(birthYears);
 
 birthYears.forEach(year => {
     console.log(`Geboren ${year}, heute ca. ${calcAge(year)} Jahre alt.`);
 });
 
-let users = [{
-        firstname: "John",
-        lastname: "Smith",
-        birthYear: 1960
-    },
-    {
-        firstname: "Jane",
-        lastname: "Doe",
-        birthYear: 1970
-    },
-    {
-        firstname: "Max",
-        lastname: "Mustermann",
-        birthYear: 1990
-    },
+let users = [
+    { firstname: "John", lastname: "Smith", birthYear: 1960 },
+    { firstname: "Jane", lastname: "Doe", birthYear: 1970 },
+    { firstname: "Max", lastname: "Mustermann", birthYear: 1990 },
 ];
 
 console.log(users);
@@ -139,3 +128,13 @@ let firstParagraph = document.querySelector("#pFirst");
 console.log(firstParagraph);
 // firstParagraph.remove();
 firstParagraph.innerHTML = "Test";
+firstParagraph.style.color = "red";
+
+let indetedParas = document.querySelectorAll(".indent");
+console.log(indetedParas);
+indetedParas.innerHTML = "Test2";
+indetedParas.forEach((para, index) => {
+    para.innerHTML = `Absatz ${index}`;
+    // para.style.color = "yellow";
+
+});
