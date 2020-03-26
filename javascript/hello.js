@@ -23,3 +23,42 @@ console.log(template);
 
 let isover18 = true;
 console.log(isover18);
+
+let age = 19;
+console.log("über 18=", age > 18);
+
+let participants = ["John", "Jane", "Max"];
+console.log(participants);
+console.log("Einträge im Array: ", participants.length);
+console.log(participants[1]);
+
+let gameHighscores = [2099, 3010, 3333, 5000];
+console.log(gameHighscores);
+
+let user = {
+    firstname: "John",
+    lastname: "Smith",
+    age: 25
+};
+console.log(user);
+console.log(user.firstname);
+user.highscore = 200;
+user["highscore ever"] = 400;
+console.log(user);
+
+let a = 2;
+let b = 4;
+console.log(a + b);
+console.log(b / (a - 1));
+a++;
+console.log(a);
+
+// let myAge = prompt("Wie alt bist du");
+// console.log('Du bis ${myAge} Jahre alt.');
+// console.log('über 18? , myAge > 18');
+
+// if (myAge > 18) {
+    // console.log("Glückwunsch über 18");
+// } else{
+    // console.log("Leider unter 18");
+// }
