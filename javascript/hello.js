@@ -33,12 +33,12 @@ console.log("über 18?", age > 18);
 
 // Arrays/Listen
 
-let participants = [ "John", "Jane", "Max" ];
+let participants = ["John", "Jane", "Max"];
 console.log(participants);
 console.log("Einträge im Array: ", participants.length);
 console.log(participants[2]);
 
-let gameHighscores = [2099, 3010, 3333, 5000 ];
+let gameHighscores = [2099, 3010, 3333, 5000];
 console.log(gameHighscores);
 
 // Objekte
@@ -57,8 +57,8 @@ console.log(user);
 
 let a = 2;
 let b = 4;
-console.log(a+b);
-console.log(b/(a-1));
+console.log(a + b);
+console.log(b / (a - 1));
 a++;
 console.log(a);
 
@@ -76,7 +76,7 @@ console.log(a);
 
 // Schleifen: for Schleife
 
-for (let i=0; i<10; i++) {
+for (let i = 0; i < 10; i++) {
     console.log(`Schleife ${i}`);
 }
 
@@ -84,3 +84,7 @@ for (let j = 0; j < participants.length; j++) {
     const participant = participants[j];
     console.log(`Teilnehmer*in ${j} ${participant}`);
 }
+
+participants.forEach(participants => {
+    console.log('Teilnehmer*in ${participant}');
+});
