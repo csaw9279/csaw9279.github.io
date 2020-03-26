@@ -58,14 +58,14 @@ console.log(a);
 // console.log('über 18? , myAge > 18');
 
 // if (myAge > 18) {
-    // console.log("Glückwunsch über 18");
+// console.log("Glückwunsch über 18");
 // } else{
-    // console.log("Leider unter 18");
+// console.log("Leider unter 18");
 // }
 
 
 // Schleifen: for Schleife
 
-for (let i=0; i<10; i++) {
-    
+for (let i = 0; i < 10; i++) {
+    console.log('Schleife $(i)');
 }
