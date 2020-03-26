@@ -111,3 +111,6 @@ console.log(birthYears);
 birthYears.forEach(year => {
     console.log(`Geboren ${year}, heute ca. ${calcAge(year)} Jahre alt.`);
 });
+
+let firstParagraph = document.querySelector("#pFirst");
+console.log(firstParagraph);
