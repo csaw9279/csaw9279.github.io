@@ -46,7 +46,7 @@ main {
 
 main p {
     text-align: justify;
-    font-family: 'Lora';
+    font-family: 'Lora', serif;
 
 
 }
@@ -85,10 +85,10 @@ footer.next {
     float: right;
 }
 
-@media screen and(max-width: 900px){
+@media screen and(max-width: 900px) {
     max-width: 90%;
 }
 
-header img.banner{
+header img.banner {
     width: 100vw;
 }
