@@ -28,17 +28,23 @@ L.control.layers({
 for (let i = 1; i < CONFIRMED.length; i++) {
     let row = CONFIRMED[i];
     //console.log(row[2],row[3]);
-    let reg = `${row[0]} ${row[1]}`
+    let reg = `${row[0]} ${row[1]}`;
     let lat = row[2];
     let lng = row[3];
     let val = row[row.length-1];
     let mrk = L.marker([row[2],row[3]]).addTo(map);
     mrk.bindPopup(`${reg}: ${val}`);
 
+    let r = Math.sqrt(val/Math.PI);
     let circle = L.circleMarker([row[2],row[3]).addTo(map);
     circle.bindPopup(`${reg}: ${val}`);
     
 }
+
+
+// Formel Fläche Kreis -> A = r²*pi
+// r² = A/PI
+//r = WURZEL(A/PI)
 
 
 
