@@ -28,6 +28,10 @@ L.control.layers({
 }).addTo(map);
 
 //console.log(CONFIRMED);
+
+let drawCircles = fuction (data){
+    
+
 for (let i = 1; i < CONFIRMED.length; i++) {
     let row = CONFIRMED[i];
     //console.log(row[2],row[3]);
@@ -43,7 +47,7 @@ for (let i = 1; i < CONFIRMED.length; i++) {
     circle.bindPopup(`${reg}: ${val}`);
     
 }
-
+}
 drawCircles(CONFIRMED);
 
 // draw circle funktion ** wiederholen ** 
