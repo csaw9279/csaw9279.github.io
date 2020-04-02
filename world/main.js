@@ -22,10 +22,6 @@ L.control.layers({
 
 L.Marker([0,0]), addTo(map);
 
-
-
- // https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
-
 console.log(CONFIRMED);
 for (let i = 1; i < CONFIRMED.length; i++) {
     let row = CONFIRMED[i];
