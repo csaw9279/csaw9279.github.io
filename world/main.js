@@ -44,6 +44,8 @@ for (let i = 1; i < CONFIRMED.length; i++) {
     
 }
 
+drawCircles(CONFIRMED);
+
 // draw circle funktion ** wiederholen ** 
 
 
