@@ -1,7 +1,9 @@
 let startLayer = L.tileLayer.provider("OpenTopoMap");
+let L.tileLayer.provider('Stamen.Terrain');
+
 
 let map = L.map("map", {
-    center: [0, 0],
+    center: [0,0],
     zoom: 2,
     layers: [
         startLayer
