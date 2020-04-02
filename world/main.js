@@ -9,6 +9,9 @@ let map = L.map("map", {
     ]
 });
 
+let circleGroup = L.featureGroup().addTo(map);
+
+
 L.control.layers({
     "OpenTopoMap" : L.tileLayer.provider("OpenTopoMap"),
     "OpenStreetMap.Mapnik" : L.tileLayer.provider("OpenStreetMap.Mapnik"),
@@ -41,6 +44,7 @@ for (let i = 1; i < CONFIRMED.length; i++) {
     
 }
 
+komme nicht mit 
 
 // Formel Fläche Kreis -> A = r²*pi
 // r² = A/PI
