@@ -5,6 +5,9 @@ let map = document.querySelector("#map");
 let lat = map.dataset.lat;
 let lng = map.dataset.lng;
 
+
+let mymap = L.map(map).setView([lat, lng], 13);
+
 // from leaflet coordinates for pancake rocks?!
 
 var mymap = L.map(map).setView([-42.118611, 171.326944], 13);
@@ -16,6 +19,6 @@ L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 
 // marks location on set location. also able to create a line or polygon object
 
-var marker = L.marker([-42.118611 , 171.326944]).addTo(mymap);
+var marker = L.marker([-42.118611, 171.326944]).addTo(mymap);
 
 marker.bindPopup("<b>Pancake Rocks</b><br>a Location of phenomena").openPopup();
