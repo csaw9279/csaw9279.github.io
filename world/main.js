@@ -52,6 +52,8 @@ let drawCircles = function (data) {
 };
 
 drawCircles(DEATHS);
+//drawCircles(RECOVERED);
+//drawCircles(CONFIRMED);
 
 // draw circle funktion ** wiederholen ** 
 
