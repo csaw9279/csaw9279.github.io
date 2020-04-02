@@ -5,8 +5,7 @@ let map = document.querySelector("#map")
 
 // from leaflet coordinates for pancake rocks?!
 
-var mymap = L.map(map).setView([42.1084 , 171.3363], 13);
-
+var mymap = L.map(map).setView([42.1084, 171.3363], 13);
 
 L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     maxZoom: 17,
