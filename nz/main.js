@@ -22,3 +22,8 @@ L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 var marker = L.marker([-42.118611, 171.326944]).addTo(mymap);
 
 marker.bindPopup("<b>Pancake Rocks</b><br>a Location of phenomena").openPopup();
+
+var popup = L.popup()
+    .setLatLng([lat, lng])
+    .setContent("Displayed place of interest here?")
+    .openOn(mymap);
