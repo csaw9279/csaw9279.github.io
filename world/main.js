@@ -22,10 +22,32 @@ L.control.layers({
 
 L.Marker([0,0]), addTo(map);
 
+
+
+ // https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
+
 console.log(CONFIRMED);
 for (let i = 1; i < CONFIRMED.length; i++) {
     let row = CONFIRMED[i];
-    console.log(row[2],row[3]);
-    L.marker([row[2], row[3]]).addTo(map);
+ //   console.log(row[2],row[3]);
+    let mrk = L.marker([row[2], row[3]]).addTo(map);
     
 }
+
+
+
+
+
+
+// https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
+
+
+/* L.control.layers({
+    "OpenTopoMap": startLayer,
+    "OpenStreetMap.Mapnik": L.tileLayer.provider("OpenStreetMap.Mapnik"),
+    "OpenStreetMap.BZH": L.tileLayer.provider("OpenStreetMap.BZH"),
+    "Stamen.Terrain" : L.tileLayer.provider("Stamen.Terrain"),
+    "Esri.WorldStreetMap" : L.tileLayer.provider("Esri.WorldStreetMap"),
+
+
+    */
