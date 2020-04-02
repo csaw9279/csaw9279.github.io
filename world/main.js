@@ -14,10 +14,11 @@ L.control.layers({
     "OpenStreetMap.Mapnik": L.tileLayer.provider("OpenStreetMap.Mapnik"),
     "OpenTopoMap.Hot": L.tileLayer.provider("OpenStreetMap.Hot"),
     "OpenTopoMap.BZH": L.tileLayer.provider("OpenStreetMap.BZH"),
-    "Stamen" : L.tileLayer.provider("Stamen.Terrain"),
+    "Stamen.Terrain" : L.tileLayer.provider("Stamen.Terrain"),
+    "Esri.WorldStreetMap" : L.tileLayer.provider("Esri.WorldStreetMap"),
 
 
-}).addTo(map)
+}).addTo(map);
 
 
 
