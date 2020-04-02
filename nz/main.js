@@ -11,7 +11,10 @@ console.log(mapdiv.dataset.title)
 
 */
 
-/* let map = L.map("map", {
+/* KARTE SETZEN
+
+
+let map = L.map("map", {
     center: [
         mapdiv.dataset.lat,
         mapdiv.dataset.lng
