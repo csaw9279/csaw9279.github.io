@@ -1,7 +1,7 @@
 // alert("Hallo Welt")
 
 
-let map = document.querySelector("#map")
+let map = document.querySelector("#map");
 
 // from leaflet coordinates for pancake rocks?!
 
