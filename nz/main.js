@@ -25,11 +25,11 @@ let marker = L.marker([lat, lng]).addTo(mymap);
 
 marker.bindPopup("<b>Pancake Rocks</b><br>Come get yo self some pancakes").openPopup();
 
-var popup = L.popup()
+/*var popup = L.popup()
     .setLatLng([lat, lng])
     .setContent("Displayed place of interest here?")
     .openOn(mymap);
-
+*/
 
 var circle = L.circle([-42.118611, 171.326944], {
     color: 'red',
