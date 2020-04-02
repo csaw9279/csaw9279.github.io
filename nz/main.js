@@ -40,4 +40,4 @@ var popup = L.popup()
 
 // 42.118611, 171.326944
 
-// circle.bindPopup("<b>Royal Albatros Center</b><br>one of the biggest Albatros colonies").openPopup(); //
+// circle.bindPopup("<b>Pancake Rocks</b><br>Sediment formation").openPopup(); //
