@@ -40,4 +40,4 @@ var circle = L.circle([-42.118611, 171.326944], {
 
 // 42.118611, 171.326944
 
-circle.bindPopup("<b>Pancake Rocks</b><br>Sediment formation").openPopup(); //
+circle.bindPopup("<b>Pancake Rocks</b><br>Deposition of calcareous sediments").openPopup(); //
