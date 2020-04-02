@@ -31,13 +31,13 @@ var popup = L.popup()
     .openOn(mymap);
 
 
-// var circle = L.circle([-42.118611, 171.326944], {
-// color: 'red',
-// fillColor: '#f04',
-// fillOpacity: 0.5,
-// radius: 300
-// }).addTo(mymap);
+var circle = L.circle([-42.118611, 171.326944], {
+    color: 'red',
+    fillColor: '#f04',
+    fillOpacity: 0.5,
+    radius: 300
+}).addTo(mymap);
 
 // 42.118611, 171.326944
 
-// circle.bindPopup("<b>Pancake Rocks</b><br>Sediment formation").openPopup(); //
+circle.bindPopup("<b>Pancake Rocks</b><br>Sediment formation").openPopup(); //
