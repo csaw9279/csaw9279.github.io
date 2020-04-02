@@ -1,7 +1,25 @@
 // alert("Hallo Welt")
 
+let mapdiv = document.querySelector("#map");
 
-let map = document.querySelector("#map");
+let map = L.map("map", {
+    center: [
+        mapdiv.dataset.lat,
+        mapdiv.dataset.lng
+    ],
+    zoom: 17,
+    layers: [
+        L.tileLayer.provider("OpenTopoMap")
+    ]
+});
+
+let mrk = L.marker([
+    mapdiv.dataset.lat,
+    mapdiv.dataset.lng
+]).addTo(map);
+
+mrk.bindPopup(mapdiv.dataset.title).openPopup();
+
 
 /*
 console.log(map)
@@ -20,6 +38,7 @@ let map = L.map("map", {
         mapdiv.dataset.lng
     ],
     zoom = 13,
+        L.tileLayer.provider('Stamen.Watercolor').addTo(map);
     layers: [
         L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     maxZoom: 17,
@@ -42,6 +61,9 @@ mrk.bindPopup(mapdiv.dataset.title).openPopup();
 */
 
 // Unterschied let und var --> in neuer JS version let anstatt var = sauberer
+
+/*
+let map = document.querySelector("#map");
 
 let lat = map.dataset.lat;
 let lng = map.dataset.lng;
@@ -72,6 +94,8 @@ marker.bindPopup("<b>Pancake Rocks</b><br>Come get yo self some pancakes").openP
     .openOn(mymap);
 */
 
+/*
+
 var circle = L.circle([-42.118611, 171.326944], {
     color: 'red',
     fillColor: '#f04',
@@ -82,3 +106,5 @@ var circle = L.circle([-42.118611, 171.326944], {
 // 42.118611, 171.326944
 
 circle.bindPopup("<b>Pancake Rocks</b><br>Deposition of calcareous sediments").openPopup(); //
+
+*/
