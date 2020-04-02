@@ -23,3 +23,4 @@ L.control.layers({
 
 L.Marker([0,0]), addTo(map);
 
+console.log(CONFIRMED);
