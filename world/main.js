@@ -6,4 +6,4 @@ let map = L.map("map", {
     layers: [
         L.titleLayer.provider("OpenTopoMap")
     ]
-})
+});
