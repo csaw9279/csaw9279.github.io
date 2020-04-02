@@ -29,6 +29,18 @@ let map = L.map("map", {
 })
 */
 
+
+/* MARKER
+
+let mrk = L.marker([
+    mapdiv.dataset.lat,
+    mapdiv.dataset.lng
+]).addTo(map);
+
+mrk.bindPopup(mapdiv.dataset.title).openPopup();
+
+*/
+
 let lat = map.dataset.lat;
 let lng = map.dataset.lng;
 
