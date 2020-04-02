@@ -11,7 +11,7 @@ let mymap = L.map(map).setView([lat, lng], 13);
 // from leaflet coordinates for pancake rocks?!
 
 
-let title=map.dataset.title;
+let title = map.dataset.title;
 console.log(title)
 
 L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
@@ -21,7 +21,7 @@ L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 
 // marks location on set location. also able to create a line or polygon object
 
-let marker = L.marker([lat,lng]).addTo(mymap);
+let marker = L.marker([lat, lng]).addTo(mymap);
 
 marker.bindPopup("<b>Pancake Rocks</b><br>Come get yo self some pancakes").openPopup();
 
@@ -29,3 +29,15 @@ var popup = L.popup()
     .setLatLng([lat, lng])
     .setContent("Displayed place of interest here?")
     .openOn(mymap);
+
+
+// var circle = L.circle([-42.118611, 171.326944], {
+// color: 'red',
+// fillColor: '#f04',
+// fillOpacity: 0.5,
+// radius: 300
+// }).addTo(mymap);
+
+// 42.118611, 171.326944
+
+// circle.bindPopup("<b>Royal Albatros Center</b><br>one of the biggest Albatros colonies").openPopup(); //
