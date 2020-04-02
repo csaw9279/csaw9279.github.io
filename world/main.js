@@ -23,8 +23,9 @@ L.control.layers({
 L.Marker([0,0]), addTo(map);
 
 console.log(CONFIRMED);
-for (let i = 0; i < CONFIRMED.length; i++) {
+for (let i = 1; i < CONFIRMED.length; i++) {
     let row = CONFIRMED[i];
-    console.log(row[4]);
+    console.log(row[2],row[3]);
+    L.marker([row[2], row[3]]).addTo(map);
     
 }
