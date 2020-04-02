@@ -12,7 +12,7 @@ let map = L.map("map", {
 L.control.layers({
     "OpenTopoMap": startLayer,
     "OpenStreetMap.Mapnik": L.tileLayer.provider("OpenStreetMap.Mapnik"),
-    "OpenTopoMap.Hot": L.tileLayer.provider("OpenStreetMap.Hot"),
+    "OpenStreetMap.Hot": L.tileLayer.provider("OpenStreetMap.Hot"),
     "OpenTopoMap.BZH": L.tileLayer.provider("OpenStreetMap.BZH"),
     "Stamen.Terrain" : L.tileLayer.provider("Stamen.Terrain"),
     "Esri.WorldStreetMap" : L.tileLayer.provider("Esri.WorldStreetMap"),
