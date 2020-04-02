@@ -26,6 +26,8 @@ for (let i = 1; i < CONFIRMED.length; i++) {
     let val = row[row.length-1];
     let mrk = L.marker([row[2],row[3]]).addTo(map);
     mrk.bindPopup(`${row[0]} ${row[1]}: ${val}`);
+
+    let circle = L.circleMarker([row[2],row[3]).addTo(map);
 }
 
 
