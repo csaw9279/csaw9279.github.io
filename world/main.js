@@ -12,7 +12,7 @@ let map = L.map("map", {
 L.control.layers({
     "OpenTopoMap" : startLayer,
     "OpenStreetMap.Mapnik" : L.tileLayer.provider("OpenStreetMap.Mapnik"),
-    "OpenTopoMap.Thunderforest.Pioneer" : L.tileLayer.provider("OpenStreetMap.Thunderforest.Pioneer"),
+    "OpenTopoMap.Hot" : L.tileLayer.provider("OpenStreetMap.Hot"),
 
 
 
