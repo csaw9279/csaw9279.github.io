@@ -23,7 +23,7 @@ L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
 
 let marker = L.marker([lat,lng]).addTo(mymap);
 
-marker.bindPopup("<b>Pancake Rocks</b><br>a Location of phenomena").openPopup();
+marker.bindPopup("<b>Pancake Rocks</b><br>Come get yo self some pancakes").openPopup();
 
 var popup = L.popup()
     .setLatLng([lat, lng])
