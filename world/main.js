@@ -21,23 +21,5 @@ L.control.layers({
 }).addTo(map);
 
 
+L.Marker([0,0]), addTo(map);
 
-
-
-/* let startLayer = L.titleLayer.provider("OpenTopoMap");
-let map = L.map("map", {
-    center: [0,0],
-    zoom: 2,
-    layers: [
-        L.titleLayer.provider("OpenTopoMap")
-    ]
-});
-
-L.control.layers({
-    "OpenTopoMap" : startLayer,
-    "OpenTopoMap.Mapnik" : L.titleLayer.provider("OpenTopoMap.Mapnik"),
-    "OpenTopoMap.Thunderforest.Pioneer: "
-}).addTo(map)
-
-
-*/
