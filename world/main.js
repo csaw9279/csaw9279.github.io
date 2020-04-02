@@ -13,7 +13,7 @@ L.control.layers({
     "OpenStreetMap.Mapnik": L.tileLayer.provider("OpenStreetMap.Mapnik"),
     "OpenTopoMap.Hot": L.tileLayer.provider("OpenStreetMap.Hot"),
     "OpenTopoMap.BZH": L.tileLayer.provider("OpenStreetMap.BZH"),
-
+    "Stamen" : L.tileLayer.provider("Stamen.Terrain"),
 
 
 }).addTo(map)
