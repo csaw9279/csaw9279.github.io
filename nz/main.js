@@ -41,6 +41,8 @@ mrk.bindPopup(mapdiv.dataset.title).openPopup();
 
 */
 
+// Unterschied let und var --> in neuer JS version let anstatt var = sauberer
+
 let lat = map.dataset.lat;
 let lng = map.dataset.lng;
 
