@@ -12,7 +12,6 @@ let map = L.map("map", {
 L.control.layers({
     "OpenTopoMap": startLayer,
     "OpenStreetMap.Mapnik": L.tileLayer.provider("OpenStreetMap.Mapnik"),
-    "OpenStreetMap.Hot": L.tileLayer.provider("OpenStreetMap.Hot"),
     "OpenStreetMap.BZH": L.tileLayer.provider("OpenStreetMap.BZH"),
     "Stamen.Terrain" : L.tileLayer.provider("Stamen.Terrain"),
     "Esri.WorldStreetMap" : L.tileLayer.provider("Esri.WorldStreetMap"),
@@ -24,3 +23,8 @@ L.control.layers({
 L.Marker([0,0]), addTo(map);
 
 console.log(CONFIRMED);
+for (let i = 0; i < CONFIRMED.length; i++) {
+    let row = CONFIRMED[i];
+    console.log(row[4]);
+    
+}
