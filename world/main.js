@@ -1,4 +1,3 @@
-
 let startLayer = L.tileLayer.provider("OpenTopoMap");
 
 let map = L.map("map", {
@@ -10,9 +9,9 @@ let map = L.map("map", {
 });
 
 L.control.layers({
-    "OpenTopoMap" : startLayer,
-    "OpenStreetMap.Mapnik" : L.tileLayer.provider("OpenStreetMap.Mapnik"),
-    "OpenTopoMap.Hot" : L.tileLayer.provider("OpenStreetMap.Hot"),
+    "OpenTopoMap": startLayer,
+    "OpenStreetMap.Mapnik": L.tileLayer.provider("OpenStreetMap.Mapnik"),
+    "OpenTopoMap.Hot": L.tileLayer.provider("OpenStreetMap.Hot"),
 
 
 
