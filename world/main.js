@@ -35,7 +35,7 @@ let map = L.map("map", {
 
 L.control.layers({
     "OpenTopoMap" : startLayer,
-    "OpenTopoMap.Mapnick" : L.titleLayer.provider("OpenTopoMap.Mapnick"),
+    "OpenTopoMap.Mapnik" : L.titleLayer.provider("OpenTopoMap.Mapnik"),
     "OpenTopoMap.Thunderforest.Pioneer: "
 }).addTo(map)
 
