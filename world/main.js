@@ -44,7 +44,10 @@ for (let i = 1; i < CONFIRMED.length; i++) {
     
 }
 
-komme nicht mit 
+// draw circle funktion ** wiederholen ** 
+
+
+// repeat this until everything is clear to advance further in coursework
 
 // Formel Fläche Kreis -> A = r²*pi
 // r² = A/PI
