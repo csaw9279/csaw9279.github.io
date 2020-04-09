@@ -29,13 +29,20 @@ let drawCircles = function () {
     let label = options[options.selectedIndex].text;
     // console.log(value,options);
 
-    if(value === "confirmed"){
+    if (value === "confirmed") {
         data = CONFIRMED;
+    } else if (value === "deaths") {
+        data = DEATHS;
+    } else {
+        data = RECOVERED;
+
     }
 
     // Datum anzeigen & Thema anzeigen
     document.querySelector("#datum").innerHTML = `am ${header[index]} - ${label}`;
-    
+
+    circleGroup.clearLayers();
+
     //console.log(data);
     for (let i = 1; i < data.length; i++) {
         let row = data[i];
@@ -62,7 +69,7 @@ let drawCircles = function () {
 // drawCircles(DEATHS);
 // drawCircles(RECOVERED);
 
-document.querySelector("#pulldown").onchange = function(){
+document.querySelector("#pulldown").onchange = function () {
     drawCircles();
 
 };
