@@ -30,7 +30,11 @@ L.control.layers({
 let drawCircles = function () {
     let data = CONFIRMED;
     let header = CONFIRMED[0];
-    let index = header.length -1;
+    let index = header.length - 1;
+    let topic = "bestätigte Fälle";
+
+    // Datum & THema anzeigen
+    document.querySelector("datum").innerHTML = àm ${header[index]} - $(topic)`;
 
 
     //console.log(data);
