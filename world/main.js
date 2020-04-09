@@ -48,20 +48,14 @@ let drawCircles = function () {
         color = "#2ECC40";
     }
 
-    console.log(CONFIRMED == RECOVERED);
-
     // Datum & Thema anzeigen anzeigen
     document.querySelector("#datum").innerHTML = `am ${header[index]} - ${label}`;
 
     circleGroup.clearLayers();
 
-    //werte = [3,2,5,7,1,9];
-    //consolo.log(werte)
-    data.sort()
-    data.sort(function compareNumbers(row1, row2){
+    data.sort(function compareNumbers(row1,row2) {
         return row2[index] - row1[index];
     });
-    
 
     //console.log(data);
     for (let i = 1; i < data.length; i++) {
@@ -72,7 +66,7 @@ let drawCircles = function () {
         let lng = row[3];
         let val = row[index];
 
-        if (val === "0"){
+        if (val === "0") {
             continue;
             //console.log(val)
         }
@@ -110,23 +104,33 @@ slider.onchange = function () {
 drawCircles();
 
 let playButton = document.querySelector("#play");
-
-let value = slider.min;
-
 let runningAnimation = null;
 
-playButton.onclick = function (){
-    console.log("clicked");
-    window.setInterval(function (){
-        console.log(value,"nach 250 ms");
-        slider.value = value;
-        drawCircles();
-        value++;
-    }, 250)
-
-    if (value > slider.max){
-        windows.clearInterval(runningAnimation);
-        playButton.value = "▶";
+playButton.onclick = function () {
+    let value;
+    if (slider.value == slider.max) {
+        value = slider.min;
+    } else {
+        value = slider.value;
     }
 
+    playButton.value = "⏸";
+
+    if (runningAnimation) {
+        window.clearInterval(runningAnimation);
+        playButton.value = "▶";
+        runningAnimation = null;
+    } else {
+        runningAnimation = window.setInterval(function () {
+            slider.value = value;
+            drawCircles();
+            value++;
+
+            if (value > slider.max) {
+                window.clearInterval(runningAnimation);
+                playButton.value = "▶";
+                runningAnimation = null;
+            }
+        }, 250)
+    }
 };
