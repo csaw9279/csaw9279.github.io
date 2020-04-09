@@ -38,13 +38,13 @@ let drawCircles = function () {
 
     if (value === "confirmed") {
         data = CONFIRMED;
-        color = "blue";
+        color = "#7FDBFF";
     } else if (value === "deaths") {
         data = DEATHS;
-        color = "purple";
+        color = "#111111";
     } else {
         data = RECOVERED;
-        color = "green";
+        color = "#2ECC40";
     }
 
     console.log(CONFIRMED == RECOVERED);
@@ -72,6 +72,7 @@ let drawCircles = function () {
         let r = Math.sqrt(val * s / Math.PI);
         let circle = L.circleMarker([lat, lng], {
             radius: r
+            color: color
         }).addTo(circleGroup);
         circle.bindPopup(`${reg}: ${val}`);
     }
