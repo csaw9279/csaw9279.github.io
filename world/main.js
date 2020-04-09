@@ -60,6 +60,11 @@ let drawCircles = function () {
     }
 };
 
+document.query.selector("pulldown").onchange = function(){
+    drawCircles();
+}
+
+
 drawCircles();
 
 
