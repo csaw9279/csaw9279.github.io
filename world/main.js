@@ -25,6 +25,10 @@ let drawCircles = function () {
     let header = CONFIRMED[0];
     let index = header.length - 1; 
     let topic = "bestätigte Fälle";
+    let options = document.querySelector("pulldown").options;
+    let value = options[options.selectedIndex].value;
+    let label = options[options.selectedIndex].text;
+    console.log(value,label,options);
 
     //Datum und Thema anzeigen
 
