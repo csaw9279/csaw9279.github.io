@@ -60,7 +60,7 @@ let drawCircles = function () {
     data.sort()
     data.sort(function compareNumbers(row1, row2){
         return row2[index] - row1[index];
-    })
+    });
     
 
     //console.log(data);
