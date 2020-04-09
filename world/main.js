@@ -115,7 +115,8 @@ playButton.onclick = function (){
     console.log("clicked");
     window.setInterval(function (){
         console.log(value,"nach 250 ms");
-        value++;
         slider.value = value;
+        drawCircles();
+        value++;
     }, 250)
 };
