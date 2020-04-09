@@ -55,6 +55,14 @@ let drawCircles = function () {
 
     circleGroup.clearLayers();
 
+    //werte = [3,2,5,7,1,9];
+    //consolo.log(werte)
+    data.sort()
+    data.sort(function compareNumbers(row1, row2){
+        return row2[index] - row1[index];
+    })
+    
+
     //console.log(data);
     for (let i = 1; i < data.length; i++) {
         let row = data[i];
