@@ -111,6 +111,10 @@ drawCircles();
 
 let playButton = document.querySelector("#play");
 
+let value = slider.min;
+
+let runningAnimation = null;
+
 playButton.onclick = function (){
     console.log("clicked");
     window.setInterval(function (){
@@ -119,4 +123,10 @@ playButton.onclick = function (){
         drawCircles();
         value++;
     }, 250)
+
+    if (value > slider.max){
+        windows.clearInterval(runningAnimation);
+        playButton.value = "▶";
+    }
+
 };
