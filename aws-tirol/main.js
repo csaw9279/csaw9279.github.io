@@ -29,8 +29,11 @@ L.control.layers({
 
 let awsUrl = "https://aws.openweb.cc/stations";
 
-let aws = L.geoJson.ajax(awsUrl).addTo(map);
-pointToLayer: function point(latlng) {
-    console.log("point: ,", point);
-    return L.Marker(latlng);
-}
+let aws = L.geoJson.ajax(awsUrl, {
+    pointToLayer: function (point, latlng) {
+        console.log("point: ,", point);
+        return L.Marker(latlng);
+    }
+}).addTo(map);
+
+
