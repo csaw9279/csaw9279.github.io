@@ -24,13 +24,13 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.overlay")
     ])
 }, {
-    "Wetterstationen Tirol":awsLayer
+    "Wetterstationen Tirol": awsLayer
 }).addTo(map);
 
 let awsUrl = "https://aws.openweb.cc/stations";
 
 let aws = L.geoJson.ajax(awsUrl).addTo(map);
-    pointToLayer: function point(latlng) {
-        console.log("point: ,", point);
-        return L.Marker(latlng);
-    }
+pointToLayer: function point(latlng) {
+    console.log("point: ,", point);
+    return L.Marker(latlng);
+}
