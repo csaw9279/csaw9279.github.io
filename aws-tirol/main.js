@@ -36,4 +36,4 @@ let aws = L.geoJson.ajax(awsUrl, {
     }
 }).addTo(map);
 
-
+//add popups with weather station data and date and information
