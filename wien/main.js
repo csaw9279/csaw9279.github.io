@@ -42,3 +42,8 @@ let walk = L.geoJson.ajax(walkUrl, {
         return marker;
     }
 }).addTo(map);
+
+walk.on("data: loaded", function(){
+    console.log(`data loaded"!`);
+    map.fitBounds(alkGroup.getBounds());
+});
