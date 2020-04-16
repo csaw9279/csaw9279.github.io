@@ -22,24 +22,23 @@ L.control.layers({
     ])
 }).addTo(map);
 
-let walkUrl = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SPAZIERPUNKTOGD%20&srsName=EPSG:4326&outputFormat=json"
+// diesen Abschnitt überarbeiten
 
-let walk = L.geoJson(SPAZIERGANG).addTo(map);
-pointToLayer: function (point, latlng) {
+let walkUrl = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SPAZIERPUNKTOGD &srsName=EPSG:4326&outputFormat=json";
+
+let walk = L.geoJson.ajax(walkUrl, {
+    pointToLayer: function(point, latlng) {
         let icon = L.icon({
-                    iconUrl: ìcons / sight.svg `,
-            iconSize: [16, 16] 
+            iconUrl: 'icons/sight.svg',
+            iconSize: [32, 32]
         });
-        let marker = L.marker(latlng);
-        console.log("Point", point)
-        marker.bindPopup(` < h3 > $ {
-                            point.properties.NAME
-                        } < /h3>`); <
-                        p > < a target = "links"
-                    href = "${point.properties.WEITERE_INF}</p>
-                    `);
+        let marker = L.marker(latlng, {
+            icon: icon
+        });
+        console.log("Point", point);
+        marker.bindPopup(`<h3>${point.properties.NAME}</h3>
+        <p><a target="links" href="${point.properties.WEITERE_INF}">Link</a></p>
+        `);
         return marker;
-
-        //return L.circleMarker(latlng, { color: "red", radius: 5});
     }
 }).addTo(map);
