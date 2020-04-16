@@ -31,7 +31,7 @@ L.control.layers({
 let walkUrl = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SPAZIERPUNKTOGD &srsName=EPSG:4326&outputFormat=json";
 
 let walk = L.geoJson.ajax(walkUrl, {
-    pointToLayer: function(point, latlng) {
+    pointToLayer: function (point, latlng) {
         let icon = L.icon({
             iconUrl: 'icons/sight.svg',
             iconSize: [32, 32]
@@ -47,7 +47,29 @@ let walk = L.geoJson.ajax(walkUrl, {
     }
 }).addTo(walkGroup);
 
-walk.on("data:loaded", function() {
-  console.log('data loaded!');
-  map.fitBounds(walkGroup.getBounds());
+walk.on("data:loaded", function () {
+    console.log('data loaded!');
+    map.fitBounds(walkGroup.getBounds());
+
 });
+
+let wandern = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:WANDERWEGEOGD&srsName=EPSG:4326&outputFormat=json";
+
+L.GeoJson.ajax(wandern).addTo(map);
+style: function () {
+return {
+    color: "green",
+    weight: 5
+};
+{
+}).addTo(map);
+
+let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:WELTKULTERBEOGD&srsName=EPSG:4326&outputFormat=json";
+
+L.geoJson.ajax(heritage, {
+    style: function() {
+        return{color: "salmon", fillOpacity: 0,3};
+        onEachFeature: function(feature, layer){
+
+        }
+}).addTo(map);
