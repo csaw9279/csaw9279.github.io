@@ -70,6 +70,8 @@ L.geoJson.ajax(heritage, {
     style: function() {
         return{color: "salmon", fillOpacity: 0,3};
         onEachFeature: function(feature, layer){
+            console.log("Feature: ", feature);
+            layer.bindPopup(`<h3>${feature.properties.NAME}</h3>`);
 
         }
 }).addTo(map);
