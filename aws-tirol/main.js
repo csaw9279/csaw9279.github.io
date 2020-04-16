@@ -8,8 +8,7 @@ let map = L.map("map", {
     ]
 });
 
-let awsLayer = L.FeatureGroup().addTo(map);
-
+let awsLayer = L.featureGroup().addTo(map);
 
 L.control.layers({
     "BasemapAT.grau": startLayer,
@@ -29,11 +28,17 @@ L.control.layers({
 
 let awsUrl = "https://aws.openweb.cc/stations";
 
-let aws = L.geoJson.ajax(awsUrl, {
-    pointToLayer: function (point, latlng) {
-        console.log("point: ,", point);
-        return L.Marker(latlng);
-    }
-}).addTo(map);
 
-//add popups with weather station data and date and information
+let aws = L.geoJson.ajax(awsUrl, {
+    pointToLayer: function(point, latlng) {
+        console.log("point: ", point);
+        let marker = L.marker(latlng).bindPopup(`
+        <h3>${point.properties.name}</h3>
+        <ul>
+        <li>Datum: ${point.properties.date}</li>
+        <li>Lufttemperatur: ${point.properties.LT} °C</li>
+        </ul>
+        `);
+        return marker;
+    }
+}).addTo(awsLayer);
