@@ -23,3 +23,11 @@ L.control.layers({
 }).addTo(map);
 
 let walk = L.geoJson(SPAZIERGANG).addTo(map);
+    pointToLayer: function(point, latlng){
+        let marker = L.marker(latlng);
+        marker.bindPopup("popup");
+        reurn marker;
+
+        //return L.circleMarker(latlng, { color: "red", radius: 5});
+    }
+}).addTo(map);
