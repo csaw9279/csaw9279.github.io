@@ -24,9 +24,16 @@ L.control.layers({
 
 let walk = L.geoJson(SPAZIERGANG).addTo(map);
     pointToLayer: function(point, latlng){
+        let icon = L.icon({
+            iconUrl: ìcons/sight.svg`,
+            iconSize: [16, 16] 
+        });
         let marker = L.marker(latlng);
-        marker.bindPopup("popup");
-        reurn marker;
+        console.log("Point", point)
+        marker.bindPopup(`<h3>${point.properties.NAME}</h3>`);
+        <p><a target ="links" href="${point.properties.WEITERE_INF}</p>
+        `);
+        return marker;
 
         //return L.circleMarker(latlng, { color: "red", radius: 5});
     }
