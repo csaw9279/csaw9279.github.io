@@ -38,10 +38,11 @@ let aws = L.geoJson.ajax(awsUrl, {
         let marker = L.marker(latlng).bindPopup(`
         <h3>${point.properties.name} ${point.geometry.coordinates[2]} m</h3>
         <ul>
-        <li>Position: Lat: ${point.geometry.coordinates[1]}/Lng: ${point.geometry.coordinates[0]}</li>
-        <li>Datum: ${point.properties.date}</li>
-        <li>Lufttemperatur: ${point.properties.LT} °C</li>
-        <li>Windgeschwindigkeit: ${point.properties.WG} m/s</li>
+        <li> Position: Lat: ${point.geometry.coordinates[1]}/Lng: ${point.geometry.coordinates[0]}</li>
+        <li> Datum: ${point.properties.date}</li>
+        <li> Lufttemperatur: ${point.properties.LT} °C</li>
+        <li> Windgeschwindigkeit: ${point.properties.WG} m/s</li>
+        <li> Relative Luftfeuchte: ${point.properties.RH} %</li>
         </ul>
         `);
         return marker;
