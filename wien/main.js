@@ -83,3 +83,11 @@ L.geoJson.ajax(heritage, {
         `);
     }
 }).addTo(heritageGroup);
+
+
+
+/* 
+beim Layer "Stadtspaziergang" für jede Sehenswürdigkeit ein Popup mit Namen, Adresse, Beschreibung sowie einem weiterführenden Link
+beim Layer "Weltkulturerbe" ein Popup mit Namen und Zusatzinfo sowie verschiedene (transparente) Flächenfarben für Kernzone (rot) und Pufferzone (gelb)
+beim Layer "Stadtwanderwege und RundumadumWanderweg Wien" die Bezeichnung des Weges als Popup und die Linien nach Typ: Stadtwanderwege schwarz strichliert, Rundumadum Wege schwarz punktiert - siehe dazu https://leafletjs.com/reference-1.6.0.html#path-dasharray
+*/
