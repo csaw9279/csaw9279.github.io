@@ -43,7 +43,11 @@ let aws = L.geoJson.ajax(awsUrl, {
         <li> Lufttemperatur: ${point.properties.LT} °C</li>
         <li> Windgeschwindigkeit: ${point.properties.WG} m/s</li>
         <li> Relative Luftfeuchte: ${point.properties.RH} %</li>
+        <li> Schneehöhe: ${point.properties.HS} cm</li>
         </ul>
+        
+        <p><a target="links" href="https://lawine.tirol.gv.at/data/grafiken/1100/standard/tag/${point.properties.plot}.png">Link</a></p>
+    
         `);
         return marker;
     }
