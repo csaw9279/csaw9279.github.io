@@ -9,7 +9,8 @@ let map = L.map("map", {
 });
 
 let sightGroup = L.markerClusterGroup().addTo(map);
-
+let walkGroup = L.featureGroup().addTo(map);
+let heritageGroup = L.featureGroup().addTo(map);
 
 L.control.layers({
     "BasemapAT.grau": startLayer,
@@ -24,7 +25,10 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.overlay")
     ])
 }, {
-    "Stadtspaziergang (Punkte)": sightGroup
+    "Stadtspaziergang (Punkte)": sightGroup,
+    "Wanderungen": walkGroup,
+    "Weltkulturerbe": heritageGroup
+
 }).addTo(map);
 
 let sightUrl = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SPAZIERPUNKTOGD &srsName=EPSG:4326&outputFormat=json";
@@ -48,7 +52,7 @@ let sights = L.geoJson.ajax(sightUrl, {
 
 sights.on("data:loaded", function () {
     sightGroup.addLayer(sights);
-    console.log('data loaded!');
+    //console.log('data loaded!');
     map.fitBounds(sightGroup.getBounds());
 });
 
@@ -61,7 +65,7 @@ L.geoJson.ajax(wandern, {
             weight: 5
         };
     }
-}).addTo(map);
+}).addTo(walkGroup);
 
 let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:WELTKULTERBEOGD&srsName=EPSG:4326&outputFormat=json";
 
@@ -73,9 +77,9 @@ L.geoJson.ajax(heritage, {
         };
     },
     onEachFeature: function (feature, layer) {
-        console.log("Feature: ", feature);
+        //console.log("Feature: ", feature);
         layer.bindPopup(`<h3>${feature.properties.NAME}</h3>
         <p>${feature.properties.INFO}</p>
         `);
     }
-}).addTo(map);
+}).addTo(heritageGroup);
