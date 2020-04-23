@@ -69,13 +69,13 @@ L.geoJson.ajax(wandern, {
         if (feature.properties.TYP == "1") {
             return {
                 color: "blue",
-                dashArray: "4.5",
+                dashArray: "4, 5",
                 fillOpacity: 0.3
             };
         } else if (feature.properties.TYP == "2") {
             return {
                 color: "blue",
-                dashArray: "1.0",
+                dashArray: "1, 4",
                 fillOpacity: 0.3
             };
 
