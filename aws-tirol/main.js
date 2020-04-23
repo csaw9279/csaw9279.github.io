@@ -8,7 +8,12 @@ let map = L.map("map", {
     ]
 });
 
-let awsLayer = L.featureGroup().addTo(map);
+// let awsLayer = L.featureGroup().addTo(map);
+
+let overlay = {
+    stations: L.featureGroup(),
+    temperature: L.featureGroup()
+}
 
 L.control.layers({
     "BasemapAT.grau": startLayer,
@@ -23,14 +28,13 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.overlay")
     ])
 }, {
-    "Wetterstationen Tirol": overlay.stations
+    "Wetterstationen Tirol": overlay.stations,
+    "Temperatur (C°)": overlay.stations
 }).addTo(map);
 
-// let awsUrl = "https://aws.openweb.cc/stations";
+let awsUrl = "https://aws.openweb.cc/stations";
 
-let overlay = {
-    stations: L.featureGroup()
-}
+
 
 let aws = L.geoJson.ajax(overlay.stations, {
     filter: function (feature) {
@@ -58,13 +62,29 @@ let aws = L.geoJson.ajax(overlay.stations, {
 }).addTo(overlay.stations);
 
 // geoJSON Objekt
+let.drawTemperature = function(jsonData){
+    console.log("aus der Funktion", jsonData);
+    L.geoJson(jsonData, {
+        pointToLayer: function (feature, latlng){
+            return L.marker(latlng, {
+                title: `${feautre.properties.name}`
+            })
+
+        }
+    }
+        
+        ).addTo(overlay.temperature);
+
+};
+
 
 aws.on("date:loaded", function () {
-    console.log(aws.toGeoJSON());
+    // console.log(aws.toGeoJSON());
+    drawTemperature(aws.toGeoJSON());
 
     // boundry auf station setzen
 
     map.fitBounds(overlay.stations.getBounds());
 
-    overlay.stations.addTo(map);
+    overlay.temperature.addTo(map);
 });
