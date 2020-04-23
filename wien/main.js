@@ -121,12 +121,11 @@ letHeritageSort = function (jsondata) {
 
         onEachFeature: function (feature, layer) {
             layer.bindPopup(`
-            <h3></h3>
-            <p></p>
+                <h3>${feature.properties.NAME}</h3>
+                <p>${feature.properties.INFO}</p>
             `)
         }
-
-    })
+    }).addTo(map);
 
 }
 
