@@ -79,10 +79,11 @@ L.geoJson.ajax(wandern, {
         }
     },
 
-    
-
+    onEachFeature: funtion (feature, layer) {
+        layer.bindPopup(`${feature.properties.BEZ_TEXT}`)
     }
-}).addTo(walkGroup);
+})addTo(map);
+
 
 // Weltkulturerbe
 
