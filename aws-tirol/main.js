@@ -26,9 +26,13 @@ L.control.layers({
     "Wetterstationen Tirol": awsLayer
 }).addTo(map);
 
-let awsUrl = "https://aws.openweb.cc/stations";
+// let awsUrl = "https://aws.openweb.cc/stations";
 
-let aws = L.geoJson.ajax(awsUrl, {
+let overlay = {
+    stations: L.featureGroup()
+}
+
+let aws = L.geoJson.ajax(overlay.stations, {
     filter: function (feature) {
         //console.log("Feature in filter: ", feature);
         return feature.geometry.coordinates[2] > 3000;
@@ -51,4 +55,4 @@ let aws = L.geoJson.ajax(awsUrl, {
         `);
         return marker;
     }
-}).addTo(awsLayer);
+}).addTo(overlay.stations);
