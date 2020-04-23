@@ -62,14 +62,42 @@ let aws = L.geoJson.ajax(overlay.stations, {
 }).addTo(overlay.stations);
 
 // geoJSON Objekt
-let.drawTemperature = function(jsonData){
+let.drawTemperature = function (jsonData) {
     console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
-        filter: function (feature) {
-            return feature.properties.LT
-            
+            filter: function (feature) {
+                return feature.properties.LT
+
+            }
+            pointToLayer: function (feature, latlng) {
+                return L.marker(latlng, {
+                    title: `${feautre.properties.name} (${feature.geometry.coordinates[2]}m)`
+                    icon: L.divIcon({
+                        html: `<div class="label-temperature">${feature.properties.LT.toFixed(1)}</div>`
+                        className: "ignore-me" // "dirty hack"
+                    })
+                })
+
+            }
         }
-        pointToLayer: function (feature, latlng){
+
+    ).addTo(overlay.temperature);
+
+};
+
+// 1. neues overlay definieren - zu L.control.layers hinzufügen und default anzeigen
+// 2. die Funtion drawWind als 1:1 Kopie von drawTemperature mit anpassungen
+// 3. einen neuen Stil .label-wind im CSS von main.css
+// 4. die funktion drawWind in data:loaded aufrufen
+
+let drawWind = function (jsonData){
+    console.log("test", jsonData);
+    L.geoJson(jsonData, {
+        filter: function (feature){
+            return feature.properties.WG
+        }
+
+        pointToLayer: function (feature, latlng) {
             return L.marker(latlng, {
                 title: `${feautre.properties.name} (${feature.geometry.coordinates[2]}m)`
                 icon: L.divIcon({
@@ -77,12 +105,9 @@ let.drawTemperature = function(jsonData){
                     className: "ignore-me" // "dirty hack"
                 })
             })
-
         }
-    }
-        
-        ).addTo(overlay.temperature);
-
+        }
+    })
 };
 
 
