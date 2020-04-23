@@ -96,6 +96,31 @@ let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature
 letHeritageSort = function (jsondata) {
     heritage_list = jsondata.features
     console.log("test", hertiage_list);
+
+    heritage_list.sort(function compareTyp(obj1, obj2){
+        return obj2.properties.TYP - obj1.properties.TYP;
+    });
+
+    L.geoJson(heritage_list,{
+        style: function (feature){
+            if (feature.properties.TYP == "1"){
+                return {
+                    color: #ff0000,
+                    fillOpacity: 0.3
+                };
+            } else if (feature.properties.TYP == "2") {
+            return {
+                color: #FFFF00,
+                fillOpacity: 0.3
+            };
+        }
+    },
+
+
+    // oneachfeature hier popupbinden
+
+    })
+
 }
 
 
