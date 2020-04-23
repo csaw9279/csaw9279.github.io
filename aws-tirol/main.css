@@ -48,5 +48,6 @@ main h2 {
     padding: 0.3em;
     border: 1px solid gray;
     background-color: silver;
+    display: inline;
 
 }
