@@ -93,8 +93,6 @@ L.geoJson.ajax(wandern, {
 let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:WELTKULTERBEOGD&srsName=EPSG:4326&outputFormat=json";
 
 
-let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:WELTKULTERBEOGD&srsName=EPSG:4326&outputFormat=json";
-
 let drawHeritageSorted = function (jsondata) {
     heritage_list = jsondata.features
     console.log("original", heritage_list);
@@ -112,7 +110,7 @@ let drawHeritageSorted = function (jsondata) {
         style: function (feature) {
             if (feature.properties.TYP == "1") {
                 return {
-                    color: "B22222",
+                    color: "#FF0000",
                     fillOpacity: 0.3
                 };
             } else if (feature.properties.TYP == "2") {
