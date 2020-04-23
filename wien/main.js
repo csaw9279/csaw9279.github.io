@@ -93,31 +93,35 @@ L.geoJson.ajax(wandern, {
 let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:WELTKULTERBEOGD&srsName=EPSG:4326&outputFormat=json";
 
 
-let drawHeritageSort = function (jsondata) {
+let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:WELTKULTERBEOGD&srsName=EPSG:4326&outputFormat=json";
+
+let drawHeritageSorted = function (jsondata) {
     heritage_list = jsondata.features
-    console.log("test", hertiage_list);
+    console.log("original", heritage_list);
+
+    
 
     heritage_list.sort(function compareTyp(obj1, obj2) {
+
         return obj2.properties.TYP - obj1.properties.TYP;
     });
+
+
 
     L.geoJson(heritage_list, {
         style: function (feature) {
             if (feature.properties.TYP == "1") {
                 return {
-                    color: #ff0000,
+                    color: "B22222",
                     fillOpacity: 0.3
                 };
             } else if (feature.properties.TYP == "2") {
                 return {
-                    color: #FFFF00,
+                    color: "#FFFF00",
                     fillOpacity: 0.3
                 };
             }
         },
-
-
-        // oneachfeature hier popupbinden
 
         onEachFeature: function (feature, layer) {
             layer.bindPopup(`
@@ -131,8 +135,10 @@ let drawHeritageSort = function (jsondata) {
 
 let heritage_layer = L.geoJson.ajax(heritage, {
     middleware: function (jsondata) {
-        return drawHeritageSort(jsondata);
+        return drawHeritageSorted(jsondata);
+
     }
+
 });
 
 
