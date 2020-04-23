@@ -1,8 +1,8 @@
 let startLayer = L.tileLayer.provider("BasemapAT.grau");
 
 let map = L.map("map", {
-    center: [47.3, 11.5],
-    zoom: 8,
+    //center: [47.3, 11.5],
+    //zoom: 8,
     layers: [
         startLayer
     ]
@@ -23,7 +23,7 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.overlay")
     ])
 }, {
-    "Wetterstationen Tirol": awsLayer
+    "Wetterstationen Tirol": overlay.stations
 }).addTo(map);
 
 // let awsUrl = "https://aws.openweb.cc/stations";
@@ -56,3 +56,15 @@ let aws = L.geoJson.ajax(overlay.stations, {
         return marker;
     }
 }).addTo(overlay.stations);
+
+// geoJSON Objekt
+
+aws.on("date:loaded", function () {
+    console.log(aws.toGeoJSON());
+
+    // boundry auf station setzen
+
+    map.fitBounds(overlay.stations.getBounds());
+
+    overlay.stations.addTo(map);
+});
