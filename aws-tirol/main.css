@@ -49,5 +49,5 @@ main h2 {
     border: 1px solid gray;
     background-color: silver;
     display: inline;
-
+    text-shadow: -1px --1px 0 white;
 }
