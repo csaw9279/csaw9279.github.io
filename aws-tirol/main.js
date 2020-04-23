@@ -90,24 +90,28 @@ let.drawTemperature = function (jsonData) {
 // 3. einen neuen Stil .label-wind im CSS von main.css
 // 4. die funktion drawWind in data:loaded aufrufen
 
-let drawWind = function (jsonData){
-    console.log("test", jsonData);
+let drawWind = function (jsonData) {
+    console.log(jsonData);
     L.geoJson(jsonData, {
-        filter: function (feature){
+        filter: function (feature) {
             return feature.properties.WG
-        }
-
+        },
         pointToLayer: function (feature, latlng) {
+
+            let windKMh = feature.properties.WG*3.8;
+
+
             return L.marker(latlng, {
-                title: `${feautre.properties.name} (${feature.geometry.coordinates[2]}m)`
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
                 icon: L.divIcon({
-                    html: `<div class="label-temperature">${feature.properties.LT.toFixed(1)}</div>`
-                    className: "ignore-me" // "dirty hack"
+                    html: `<div class="label-wind">${windKMh.toFixed(1)}</div>`,
+                    className: "ignore-me" 
                 })
-            })
+
+            });
         }
-        }
-    })
+    }).addTo(overlay.wind); 
+
 };
 
 
