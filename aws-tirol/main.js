@@ -67,7 +67,7 @@ let.drawTemperature = function(jsonData){
     L.geoJson(jsonData, {
         pointToLayer: function (feature, latlng){
             return L.marker(latlng, {
-                title: `${feautre.properties.name}`
+                title: `${feautre.properties.name} (${feature.geometry.coordinates[2]}m)`
             })
 
         }
