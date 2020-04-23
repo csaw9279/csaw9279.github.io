@@ -129,7 +129,11 @@ let drawHeritageSort = function (jsondata) {
 
 }
 
-let heritage
+let heritage_layer = L.geoJson.ajax(heritage, {
+    middleware: function (jsondata) {
+        return drawHeritageSort(jsondata);
+    }
+});
 
 
 /*L.geoJson.ajax(heritage, {
