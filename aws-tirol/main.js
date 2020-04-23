@@ -56,6 +56,29 @@ let aws = L.geoJson.ajax(awsUrl, {
     }
 }).addTo(overlay.stations);
 
+
+
+let getColor = function (val, ramp) {
+ //   console.log(val, ramp);
+    let col = "red";
+
+    for (let i = 0; i < ramp.length; i++) {
+        const pair = ramp[i];
+        if (val >= pair [0]) {
+            break;
+        } else {
+            col = pair [1];
+        }
+        //console.log(val,pair);
+    }
+    
+
+    return col;
+};
+let color = getColor(34,COLORS.temperature);
+console.log(color);
+
+
 let drawTemperature = function(jsonData) {
     //console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
@@ -106,6 +129,6 @@ aws.on("data:loaded", function() {
 
     overlay.temperature.addTo(map);
 
-    console.log(COLORS);
+//    console.log(COLORS);
 });
 
