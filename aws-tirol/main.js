@@ -95,23 +95,23 @@ let drawWind = function (jsonData) {
     console.log(jsonData);
     L.geoJson(jsonData, {
         filter: function (feature) {
-            return feature.properties.WG
+            return feature.properties.WG;
         },
         pointToLayer: function (feature, latlng) {
 
-            let windKMh = feature.properties.WG*3.8;
+            let windKMh = feature.properties.WG * 3.8;
 
 
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
                 icon: L.divIcon({
                     html: `<div class="label-wind">${windKMh.toFixed(1)}</div>`,
-                    className: "ignore-me" 
+                    className: "ignore-me"
                 })
 
             });
         }
-    }).addTo(overlay.wind); 
+    }).addTo(overlay.wind);
 
 };
 
