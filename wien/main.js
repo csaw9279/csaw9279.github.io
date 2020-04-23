@@ -31,6 +31,8 @@ L.control.layers({
 
 }).addTo(map);
 
+// spazieren
+
 let sightUrl = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SPAZIERPUNKTOGD &srsName=EPSG:4326&outputFormat=json";
 
 let sights = L.geoJson.ajax(sightUrl, {
@@ -56,6 +58,8 @@ sights.on("data:loaded", function () {
     map.fitBounds(sightGroup.getBounds());
 });
 
+// Wandern
+
 let wandern = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:WANDERWEGEOGD&srsName=EPSG:4326&outputFormat=json";
 
 L.geoJson.ajax(wandern, {
@@ -66,6 +70,8 @@ L.geoJson.ajax(wandern, {
         };
     }
 }).addTo(walkGroup);
+
+// Weltkulturerbe
 
 let heritage = "https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:WELTKULTERBEOGD&srsName=EPSG:4326&outputFormat=json";
 
