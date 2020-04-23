@@ -107,6 +107,7 @@ let drawWind = function(jsonData) {
         pointToLayer: function(feature, latlng) {
             let kmh = Math.round(feature.properties.WG / 1000 * 3600);
             let color = getColor(feature.properties.WG,COLORS.wind);
+            let rotation = feature.properties.WR;
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)` - ${kmh} km/h,
                 icon: L.divIcon({
