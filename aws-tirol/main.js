@@ -65,6 +65,10 @@ let aws = L.geoJson.ajax(overlay.stations, {
 let.drawTemperature = function(jsonData){
     console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
+        filter: function (feature) {
+            return feature.properties.LT
+            
+        }
         pointToLayer: function (feature, latlng){
             return L.marker(latlng, {
                 title: `${feautre.properties.name} (${feature.geometry.coordinates[2]}m)`
