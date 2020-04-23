@@ -41,3 +41,12 @@ main h2 {
     height: 70vh;
     border: 1px solid gray;
 }
+
+.label-temperature {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 0.3em;
+    border: 1px solid gray;
+    background-color: silver;
+
+}

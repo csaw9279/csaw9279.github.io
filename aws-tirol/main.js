@@ -68,6 +68,10 @@ let.drawTemperature = function(jsonData){
         pointToLayer: function (feature, latlng){
             return L.marker(latlng, {
                 title: `${feautre.properties.name} (${feature.geometry.coordinates[2]}m)`
+                icon: L.divIcon({
+                    html: `<div class="label-temperature">${feature.properties.LT.toFixed(1)}</div>`
+                    className: "ignore-me" // "dirty hack"
+                })
             })
 
         }
