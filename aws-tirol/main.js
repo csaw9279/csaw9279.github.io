@@ -99,7 +99,7 @@ let drawWind = function (jsonData) {
         },
         pointToLayer: function (feature, latlng) {
 
-            let windKMh = feature.properties.WG * 3.8;
+            let windKMh = feature.properties.WG * 3.6;
 
 
             return L.marker(latlng, {
