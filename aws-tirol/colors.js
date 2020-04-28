@@ -26,3 +26,11 @@ const COLORS = {
         [5, "rgb(255,255,100)"]
     ]
 };
+
+
+
+
+/* Nach dem Muster des Temperaturlayers sollt ihr mindestens einen 
+der beiden neuen Layer Relative Feuchte (humidity) und/oder Gesamtschneehöhe 
+(snow) implementieren. Die Farben und Schwellenwerte kommen wieder von
+ https://lawine.report und sind in colors.js zu ergänzen. */
