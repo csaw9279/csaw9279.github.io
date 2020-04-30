@@ -157,6 +157,14 @@ let drawHumidity = function (jsonData) {
 // Rainviewer ------------- 
 
 let Rainviewer = L.control.rainviewer({
+    position: ,
+    nextButtonText: ,
+    playStopButtonText: ,
+    prevButtonText: ,
+    positionSliderLabelText: ,
+    opacitySliderLabelText: ,
+    animationInterval: ,
+    opacity: ,
 
 });
 
