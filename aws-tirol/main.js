@@ -146,6 +146,31 @@ let drawHumidity = function (jsonData) {
 };
 
 
+// schneedecke
+
+let drawSnow = function (jsonData) {
+    L.geoJson(jsonData, {
+        filter: function (feature) {
+            return feature.properties.HS
+        },
+
+    pointToLayer: function (feature, latlng) {
+
+
+        return L.marker(latlng, {
+            title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m) - ${feature.properties.HS} cm`,
+            icon: L.divIcon({
+                html: `<div class="label-snow" style="background-color:${color}">${feature.properties.HS.toFixed(1)}</div>`,
+                className: "ignore-me"
+            })
+
+        });
+    }
+}).addTo(overlay.snow);
+
+};
+
+
 aws.on("data:loaded", function () {
     //console.log(aws.toGeoJSON());
     drawTemperature(aws.toGeoJSON());
