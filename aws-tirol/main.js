@@ -13,7 +13,8 @@ let overlay = {
     stations: L.featureGroup(),
     temperature: L.featureGroup(),
     wind: L.featureGroup(),
-    humidity: L.FeatureGroup()
+    humidity: L.FeatureGroup(),
+    snow: L.featureGroup()
 }
 
 L.control.layers({
@@ -32,7 +33,8 @@ L.control.layers({
     "Wetterstationen Tirol": overlay.stations,
     "Temperatur (°C)": overlay.temperature,
     "Windgeschwindigkeit (km/h)": overlay.wind,
-    "Relative Luftfeuchtigkeit (%)": overlay.humidity
+    "Relative Luftfeuchtigkeit (%)": overlay.humidity,
+    "Schneehöhe (cm)": overlay.snow
 
 }).addTo(map);
 
@@ -176,6 +178,8 @@ aws.on("data:loaded", function () {
     drawTemperature(aws.toGeoJSON());
     drawWind(aws.toGeoJSON());
     drawHumidity(aws.toGeoJSON());
+    drawSnow(aws.toGeoJSON());
+
     map.fitBounds(overlay.stations.getBounds());
 
     overlay.stations.addTo(map);
