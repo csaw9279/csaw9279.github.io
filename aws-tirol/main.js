@@ -33,7 +33,7 @@ L.control.layers({
     "Temperatur (°C)": overlay.temperature,
     "Windgeschwindigkeit (km/h)": overlay.wind,
     "Relative Luftfeuchtigkeit (%)": overlay.humidity
-    
+
 }).addTo(map);
 
 let awsUrl = "https://aws.openweb.cc/stations";
@@ -133,6 +133,7 @@ let drawHumidity = function (jsonData) {
         },
         pointToLayer: function (feature, latlng) {
             let color = getColor(feature.properties.RH, COLORS.humidity);
+
             return L.marker(latlng, {
                 title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m)`,
                 icon: L.divIcon({
