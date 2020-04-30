@@ -168,6 +168,7 @@ let Rainviewer = L.control.rainviewer({
 
 });
 
+rainviewer.addTo(map);
 
 
 
