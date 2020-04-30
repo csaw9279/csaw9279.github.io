@@ -133,6 +133,29 @@ aws.on("data:loaded", function () {
 });
 
 
+let drawHumidity = function (jsonData) {
+    //console.log("aus der Funktion", jsonData);
+    L.geoJson(jsonData, {
+        filter: function (feature) {
+            return feature.properties.WG;
+        },
+        pointToLayer: function (feature, latlng) {
+            let kmh = Math.round(feature.properties.WG / 1000 * 3600);
+            let color = getColor(kmh, COLORS.wind);
+            let rotation = feature.properties.WR;
+            return L.marker(latlng, {
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m) - ${kmh} km/h`,
+                icon: L.divIcon({
+                    html: `<div class="label-wind"><i class="fas fa-arrow-circle-up" style="color:${color};transform: rotate(${rotation}deg)"></i></div>`,
+                    className: "ignore-me" // dirty hack
+                })
+            })
+        }
+    }).addTo(overlay.wind);
+};
+
+
+
 
 
 /*
