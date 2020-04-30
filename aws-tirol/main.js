@@ -121,18 +121,6 @@ let drawWind = function (jsonData) {
     }).addTo(overlay.wind);
 };
 
-aws.on("data:loaded", function () {
-    //console.log(aws.toGeoJSON());
-    drawTemperature(aws.toGeoJSON());
-    drawWind(aws.toGeoJSON());
-    map.fitBounds(overlay.stations.getBounds());
-
-    overlay.wind.addTo(map);
-
-    //console.log(COLORS);
-});
-
-
 let drawHumidity = function (jsonData) {
     //console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
@@ -151,6 +139,18 @@ let drawHumidity = function (jsonData) {
         }
     }).addTo(overlay.wind);
 };
+
+
+aws.on("data:loaded", function () {
+    //console.log(aws.toGeoJSON());
+    drawTemperature(aws.toGeoJSON());
+    drawWind(aws.toGeoJSON());
+    map.fitBounds(overlay.stations.getBounds());
+
+    overlay.wind.addTo(map);
+
+    //console.log(COLORS);
+});
 
 
 
