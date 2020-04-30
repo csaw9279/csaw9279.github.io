@@ -137,7 +137,7 @@ let drawHumidity = function (jsonData) {
     //console.log("aus der Funktion", jsonData);
     L.geoJson(jsonData, {
         filter: function (feature) {
-            return feature.properties.WG;
+            return feature.properties.RH;
         },
         pointToLayer: function (feature, latlng) {
             let kmh = Math.round(feature.properties.WG / 1000 * 3600);
