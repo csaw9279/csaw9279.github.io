@@ -27,4 +27,5 @@ console.log(ADLERBLICKE);
 
 for (const blick of ADLERBLICKE) {ä
     console.log(blick);
+    let mrk = L.marker(blick.lat)
 }
