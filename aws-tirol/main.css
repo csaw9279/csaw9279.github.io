@@ -67,7 +67,12 @@ main h2 {
          1px  1px 0 black
 }
 
-.label-humidity{
+.label-humidity {
+    font size: 1.25em;
+    font-weight: bold;
+    background-color: green;
+    display: inline;
+    
 
     
 }
