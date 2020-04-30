@@ -1,0 +1,7 @@
+git config --global user.name csaw9279
+
+git clone https://github.com/csaw9279/kosayh.git
+
+
+git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
