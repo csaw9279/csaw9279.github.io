@@ -135,7 +135,7 @@ let drawHumidity = function (jsonData) {
             let color = getColor(feature.properties.RH, COLORS.humidity);
 
             return L.marker(latlng, {
-                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m) - ${feature.properties.HS} cm`,
+                title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m) - ${feature.properties.RH} cm`,
                 icon: L.divIcon({
                     html: `<div class="label-humidity" style="background-color:${color}">${feature.properties.RH.toFixed(1)}</div>`,
                     className: "ignore-me" // dirty hack
