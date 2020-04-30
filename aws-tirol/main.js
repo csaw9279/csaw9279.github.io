@@ -158,6 +158,9 @@ let drawSnow = function (jsonData) {
 
     pointToLayer: function (feature, latlng) {
 
+        // colors.js data access
+
+        let color = getColor(feature.properties.HS, COLORS.snow);
 
         return L.marker(latlng, {
             title: `${feature.properties.name} (${feature.geometry.coordinates[2]}m) - ${feature.properties.HS} cm`,
