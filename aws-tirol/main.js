@@ -170,7 +170,7 @@ let Rainviewer = L.control.rainviewer({
     positionSliderLabelText: "Time: ",
     opacitySliderLabelText: "Opacity:",
     animationInterval: 400,
-    opacity: 0.3,
+    opacity: 0.8,
 
 });
 
