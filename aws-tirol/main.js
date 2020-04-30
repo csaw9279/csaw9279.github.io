@@ -154,6 +154,14 @@ let drawHumidity = function (jsonData) {
 
 
 
+// Rainviewer ------------- 
+
+let Rainviewer = L.control.rainviewer({
+
+});
+
+
+
 
 
 /*
