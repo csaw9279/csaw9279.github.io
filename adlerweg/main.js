@@ -21,3 +21,10 @@ L.control.layers({
         L.tileLayer.provider("BasemapAT.overlay")
     ])
 }).addTo(map);
+
+console.log(ETAPPEN);
+console.log(ADLERBLICKE);
+
+for (const blick of ADLERBLICKE) {ä
+    console.log(blick);
+}
