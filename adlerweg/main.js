@@ -107,3 +107,7 @@ pulldown.onchange = function(evt) {
     //console.log(nr);
     drawEtappe(nr);
 }
+
+
+
+
