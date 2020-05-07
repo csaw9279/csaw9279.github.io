@@ -89,7 +89,7 @@ let drawEtappe = function(nr) {
 };
 drawEtappe(10);
 
-let pulldown = document.querySelector("#pulldown");
+let pulldown = document.querySelector("#pulldown");  // addresses pulldown menu in index.html
 //console.log(pulldown);
 
 for (let i = 1; i < ETAPPEN.length; i++) {
