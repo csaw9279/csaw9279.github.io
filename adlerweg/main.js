@@ -55,6 +55,8 @@ let drawEtappe = function(nr) {
     let track = ETAPPEN[nr].track.replace("A", "");  // A nicht löschen --> track attribute
     console.log(track);
 
+    let gpx-download = `/adlerweg/gpx/AdlerwegEtappe${tack}.gpx`
+
     let gpx = new L.GPX(`gpx/AdlerwegEtappe${track}.gpx`, {
         async: true,
         marker_options: {
@@ -85,7 +87,7 @@ let drawEtappe = function(nr) {
             elem.innerHTML = val;
         //    console.log(val);
         }
-        download = document.querySelector("#track").href = ;  // pfad angeben
+        download = document.querySelector("#track").href = gpx-download;  // pfad angeben
     }
 };
 drawEtappe(1);
