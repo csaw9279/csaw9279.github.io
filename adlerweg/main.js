@@ -76,6 +76,7 @@ let drawEtappe = function(nr) {
     }).addTo(overlay.etappen);
     overlay.etappen.addTo(map);
 
+    // Iterates data information --> adjusts text according to "Etappe"
     for (const key in ETAPPEN[nr]) {
         const val = ETAPPEN[nr][key];
         console.log(`et-${key}`);
