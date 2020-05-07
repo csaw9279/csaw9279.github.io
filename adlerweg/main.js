@@ -60,7 +60,7 @@ let drawEtappe = function(nr) {
         marker_options: {
             startIconUrl: `icons/number_${nr}.png`,
             endIconUrl: "icons/finish.png",
-            shadowUrl: null,
+            shadowUrl: null,            // ERstellt grafik mit schatten --> null = nicht verwenden
             iconSize: [32, 37],
             iconAnchor: [16, 37],
             popupAnchor: [0, -37]
