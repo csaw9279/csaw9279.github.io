@@ -125,7 +125,8 @@ let drawEinkehr = function () {
                 iconAnchor: [16, 37],   // centers img
                 popupAnchor: [0, -37],  // moves img 37px
                 iconUrl: "icons/panoramicview.png"
-            })
+            }).addTo(overlay.einkehr);
+            
         }
     }
 };
