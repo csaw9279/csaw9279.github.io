@@ -87,7 +87,7 @@ let drawEtappe = function(nr) {
         }
     }
 };
-drawEtappe(10);
+drawEtappe(1);
 
 let pulldown = document.querySelector("#pulldown");  // addresses pulldown menu in index.html
 //console.log(pulldown);
