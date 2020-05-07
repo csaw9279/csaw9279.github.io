@@ -33,7 +33,7 @@ L.control.layers({
 //console.log(ETAPPEN);
 //console.log(ADLERBLICKE);
 
-for (const blick of ADLERBLICKE) {
+for (const blick of ADLERBLICKE) { 
     //console.log(blick);
     let mrk = L.marker([blick.lat,blick.lng], {
         icon: L.icon({
