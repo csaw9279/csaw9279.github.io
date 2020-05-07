@@ -8,7 +8,7 @@ const EINKEHR = [
     [Etappennummer(28), "Badener Hütte", 47.081128, 47.081128],
     [Etappennummer(29), "Venedigerhaus", 47.123304, 12.451420],
     [Etappennummer(29), "Matreier Tauernhaus", 47.119034,12.496518],
-    [Etappennummer(30), "Steiner Alm", ],
+    [Etappennummer(30), "Steiner Alm", 46.7101301,13.0477731],
     [Etappennummer(30), "Sudentendeutsche Hütte", 47.0493723,12.5762715],
     [Etappennummer(31), "Kalser Tauernhaus", 47.0707027,12.6238444],
     [Etappennummer(32), "Bergeralm", 47.7656702, 13.5509866],
