@@ -47,16 +47,18 @@
             die nach Gipfelsiegen streben. Alpine Erfahrung, Trittsicherheit und Schwindelfreiheit sind die
             Voraussetzung bei vielen Etappen.</p>
         <select id="pulldown"></select>
-        <div id="map"></div>
+       
        
        <!-- Von den 14 Attributen für jede Etappe in etappen.js sollt ihr, mit Ausnahme der Nummer, alle über unsere et-* ID Lösung im HTML viusalisieren. Wie und wo ihr sie anzeigt bleibt euch überlassen, ich hätte aber gerne, dass die Einkehrmöglichkeiten mit Kommas statt der Rauten getrennt sind und aus dem track-Attribut ein Link zum Download des jeweiligen .gpx Files gemacht wird. -->
        
+
+       <!-- Mit Span lösen sonst ist alles untereinander?!-->
         <h5>Ausgangspunkt:</h5>
         <p id="et-start"></p>
         <h5>Endpunkt:</h5>
         <p id="et-ziel"></p>
         <h5>Streckendetails:</h5>
-        <h5>Länge in KM</h4>
+        <h5>Länge in KM:</h4>
         <p id="et-km"> km</p>
         <h5>Anstieg:</h4>
         <p id="auf"></p>
@@ -69,6 +71,11 @@
         <h5>Dauer in h:</h4>
         <p id="et-stunden"></p>
         <p id="et-info"></p>
+
+
+        <!-- karte unter den daten-->
+
+        <div id="map"></div>
 
         <!-- Downloadbutton für gpx-daten -->
 
