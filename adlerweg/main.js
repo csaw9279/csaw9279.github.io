@@ -94,9 +94,11 @@ let pulldown = document.querySelector("#pulldown");  // addresses pulldown menu 
 
 for (let i = 1; i < ETAPPEN.length; i++) {
     const etappe = ETAPPEN[i];
-    //console.log(etappe);
+    console.log(etappe);
     pulldown.innerHTML += `<option value="${i}">${etappe.titel}</option>`;
 }
+
+// activates pulldown menu for "etappen" - 
 pulldown.onchange = function(evt) {
     let nr = evt.target.options[evt.target.options.selectedIndex].value;
     //console.log(nr);
