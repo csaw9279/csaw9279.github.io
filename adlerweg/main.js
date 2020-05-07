@@ -57,19 +57,22 @@ let drawEtappe = function(nr) {
 
     let gpxpath = `gpx/AdlerwegEtappe${track}.gpx`
 
-    let gpx = new L.GPX(gpxpath {
+    let etappenPfad = `gpx/AdlerwegEtappe${track}.gpx`
+    //console.log(etappenPfad)
+    let gpx = new L.GPX(etappenPfad, {
         async: true,
+        polyline_options: {
+            color: 'black',
+            weight: 3,
+            lineCap: 'round',
+            dashArray: [2, 5]
+        },
         marker_options: {
-            startIconUrl: `icons/number_${nr}.png`,
-            endIconUrl: "icons/finish.png",
-            shadowUrl: null,            // ERstellt grafik mit schatten --> null = nicht verwenden
+            startIconUrl: `icon/number/number_${nr}.png`,
+            endIconUrl: 'icon/finish.png',
+            shadowUrl: null,
             iconSize: [32, 37],
             iconAnchor: [16, 37],
-            popupAnchor: [0, -37]
-        },
-        polyline_options: {
-            color: "black",
-            dashArray: [2, 5]
         }
     });
     
@@ -86,7 +89,7 @@ let drawEtappe = function(nr) {
         if (elem) {
             elem.innerHTML = ETAPPEN[nr][key];
         }
-        download = document.querySelector("#track").href = gpxpath;  // pfad angeben
+        download = document.querySelector("#track").href = etappenPfad;  // pfad angeben
 }
 };
 drawEtappe(1);
