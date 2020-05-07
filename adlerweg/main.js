@@ -37,9 +37,9 @@ for (const blick of ADLERBLICKE) {
     //console.log(blick);
     let mrk = L.marker([blick.lat,blick.lng], {
         icon: L.icon({
-            iconSize: [32, 37],
-            iconAnchor: [16, 37],
-            popupAnchor: [0, -37],
+            iconSize: [32, 37],  // centers icon if imgsize is known
+            iconAnchor: [16, 37],   // centers img
+            popupAnchor: [0, -37],  // moves img 37px
             iconUrl: "icons/panoramicview.png"
         })
     }).addTo(overlay.adlerblicke);
@@ -54,8 +54,6 @@ let drawEtappe = function(nr) {
     console.log(ETAPPEN[nr].track);
     let track = ETAPPEN[nr].track.replace("A", "");  // A nicht löschen --> track attribute
     console.log(track);
-
-    let gpxdownload = `/adlerweg/gpx/AdlerwegEtappe${tack}.gpx`
 
     let gpx = new L.GPX(`gpx/AdlerwegEtappe${track}.gpx`, {
         async: true,
@@ -73,24 +71,26 @@ let drawEtappe = function(nr) {
         }
     });
     
-    gpx.on("loaded", function(evt) {
+    gpx.on("loaded", function(evt){
         map.fitBounds(evt.target.getBounds());
     }).addTo(overlay.etappen);
     overlay.etappen.addTo(map);
 
     // Iterates data information --> adjusts text according to "Etappe"
     for (const key in ETAPPEN[nr]) {
-        const val = ETAPPEN[nr][key];
+        const element = ETAPPEN[nr][key];
         console.log(`et-${key}`);
         let elem = document.querySelector(`#et-${key}`);
         if (elem) {
-            elem.innerHTML = val;
-        //    console.log(val);
+            elem.innerHTML = ETAPPEN[nr][key];
         }
-        download = document.querySelector("#track").href = gpxdownload;  // pfad angeben
-    }
+        download = document.querySelector("#track").href = gpx;  // pfad angeben
+}
 };
 drawEtappe(1);
+
+
+
 
 let pulldown = document.querySelector("#pulldown");  // addresses pulldown menu in index.html
 //console.log(pulldown);
@@ -98,7 +98,7 @@ let pulldown = document.querySelector("#pulldown");  // addresses pulldown menu 
 for (let i = 1; i < ETAPPEN.length; i++) {
     const etappe = ETAPPEN[i];
     console.log(etappe);
-    pulldown.innerHTML += `<option value="${i}">${etappe.titel}</option>`;
+    pulldown.innerHTML += `<option value ="${i}">${etappe.titel}</option>`; 
 }
 
 // activates pulldown menu for "etappen" - 
