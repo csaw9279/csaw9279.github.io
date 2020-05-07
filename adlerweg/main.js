@@ -51,9 +51,9 @@ overlay.adlerblicke.addTo(map);
 let drawEtappe = function(nr) {
     overlay.etappen.clearLayers();
 
-    //console.log(ETAPPEN[nr].track);
+    console.log(ETAPPEN[nr].track);
     let track = ETAPPEN[nr].track.replace("A", "");  // A nicht löschen --> track attribute
-    //console.log(track);
+    console.log(track);
 
     let gpx = new L.GPX(`gpx/AdlerwegEtappe${track}.gpx`, {
         async: true,
