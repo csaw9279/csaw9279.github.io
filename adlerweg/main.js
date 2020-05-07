@@ -35,13 +35,13 @@ L.control.layers({
 //console.log(ETAPPEN);
 //console.log(ADLERBLICKE);
 
-for (const blick of ADLERBLICKE) { 
+for (const blick of ADLERBLICKE) {
     //console.log(blick);
-    let mrk = L.marker([blick.lat,blick.lng], {
+    let mrk = L.marker([blick.lat, blick.lng], {
         icon: L.icon({
-            iconSize: [32, 37],  // centers icon if imgsize is known
-            iconAnchor: [16, 37],   // centers img
-            popupAnchor: [0, -37],  // moves img 37px
+            iconSize: [32, 37],
+            iconAnchor: [16, 37],
+            popupAnchor: [0, -37],
             iconUrl: "icons/panoramicview.png"
         })
     }).addTo(overlay.adlerblicke);
@@ -50,66 +50,65 @@ for (const blick of ADLERBLICKE) {
 }
 overlay.adlerblicke.addTo(map);
 
-let drawEtappe = function(nr) {
+let drawEtappe = function (nr) {
     overlay.etappen.clearLayers();
 
-    console.log(ETAPPEN[nr].track);
-    let track = ETAPPEN[nr].track.replace("A", "");  // A nicht löschen --> track attribute
-    console.log(track);
+    //console.log(ETAPPEN[nr].track);
+    let track = ETAPPEN[nr].track.replace("A", "");
+    //console.log(track);
 
-
-
-    let etappenPfad = `gpx/AdlerwegEtappe${track}.gpx`
-    //console.log(etappenPfad)
-    let gpx = new L.GPX(etappenPfad, {
+    let gpx = new L.GPX(`gpx/AdlerwegEtappe${track}.gpx`, {
         async: true,
-        polyline_options: {
-            color: 'black',
-            weight: 3,
-            lineCap: 'round',
-            dashArray: [2, 5]
-        },
         marker_options: {
-            startIconUrl: `icon/number/number_${nr}.png`,
-            endIconUrl: 'icon/finish.png',
+            startIconUrl: `icons/number_${nr}.png`,
+            endIconUrl: "icons/finish.png",
             shadowUrl: null,
             iconSize: [32, 37],
             iconAnchor: [16, 37],
+            popupAnchor: [0, -37]
+        },
+        polyline_options: {
+            color: "black",
+            dashArray: [2, 5]
         }
     });
-    
-    gpx.on("loaded", function(evt){
+
+    gpx.on("loaded", function (evt) {
         map.fitBounds(evt.target.getBounds());
     }).addTo(overlay.etappen);
     overlay.etappen.addTo(map);
 
-    // Iterates data information --> adjusts text according to "Etappe"
     for (const key in ETAPPEN[nr]) {
-        const element = ETAPPEN[nr][key];
-        console.log(`et-${key}`);
-        let elem = document.querySelector(`#et-${key}`);
-        if (elem) {
-            elem.innerHTML = ETAPPEN[nr][key];
+        if (ETAPPEN[nr].hasOwnProperty(key)) {
+            let val = ETAPPEN[nr][key];
+            let elem = document.querySelector(`#et-${key}`);
+            if (elem) {
+                if (key == "einkehr") {
+                    val = val.replace(/#/g, ", ");
+                }
+
+                if (key == "track") {
+                    val = val.replace("A", "");
+                    val = `<a href="gpx/AdlerwegEtappe${val}.gpx">GPX</a>`
+                }
+
+                elem.innerHTML = val;
+            }
         }
-        download = document.querySelector("#track").href = etappenPfad;  // pfad angeben
-}
+    }
+
 };
 drawEtappe(1);
 
-
-
-
-let pulldown = document.querySelector("#pulldown");  // addresses pulldown menu in index.html
+let pulldown = document.querySelector("#pulldown");
 //console.log(pulldown);
 
 for (let i = 1; i < ETAPPEN.length; i++) {
     const etappe = ETAPPEN[i];
-    console.log(etappe);
-    pulldown.innerHTML += `<option value ="${i}">${etappe.titel}</option>`; 
+    //console.log(etappe);
+    pulldown.innerHTML += `<option value="${i}">${etappe.titel}</option>`;
 }
-
-// activates pulldown menu for "etappen" - 
-pulldown.onchange = function(evt) {
+pulldown.onchange = function (evt) {
     let nr = evt.target.options[evt.target.options.selectedIndex].value;
     //console.log(nr);
     drawEtappe(nr);
@@ -117,13 +116,19 @@ pulldown.onchange = function(evt) {
 
 
 let drawEinkehr = function () {
-    for (const einkehr of EINKEHR) {
-        console.log(einkehr);
-        let mrk = L.marker([einkehr[2], einkehr[3]]).addTo(overlay.einkehr);
-        mrk.bindPopup(`${einkehr[1]} (Etappe ${einkehr[0]})`);
-
+    for (let einkehr of EINKEHR) {
+        //console.log(einkehr);
+        let mrk = L.marker([einkehr[2],einkehr[3]]).addTo(overlay.einkehr);
+        mrk.bindPopup(`${einkehr[1]} (Etappe ${einkehr[0]})`);{
+            icon: L.icon({
+                iconSize: [32, 37],  // centers icon if imgsize is known
+                iconAnchor: [16, 37],   // centers img
+                popupAnchor: [0, -37],  // moves img 37px
+                iconUrl: "icons/panoramicview.png"
+            })
+        }
     }
 };
-
 drawEinkehr();
 overlay.einkehr.addTo(map);
+
