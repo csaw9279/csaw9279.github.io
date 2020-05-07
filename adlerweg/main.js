@@ -85,6 +85,7 @@ let drawEtappe = function(nr) {
             elem.innerHTML = val;
         //    console.log(val);
         }
+        download = document.querySelector("#track").href = ;  // pfad angeben
     }
 };
 drawEtappe(1);
