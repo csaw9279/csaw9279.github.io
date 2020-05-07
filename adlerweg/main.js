@@ -55,7 +55,7 @@ let drawEtappe = function(nr) {
     let track = ETAPPEN[nr].track.replace("A", "");  // A nicht löschen --> track attribute
     console.log(track);
 
-    let gpxpath = `gpx/AdlerwegEtappe${track}.gpx`
+
 
     let etappenPfad = `gpx/AdlerwegEtappe${track}.gpx`
     //console.log(etappenPfad)
