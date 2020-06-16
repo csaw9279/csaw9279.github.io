@@ -102,8 +102,16 @@ text-align: center;
 
 
 
+/* Video */
 
-    /* Flipbox w3 */
+.video {
+  margin: auto;
+  padding: center;
+}
+
+
+
+    /* Bilder drehen */
 
     .flip-box {
       background-color: transparent;
