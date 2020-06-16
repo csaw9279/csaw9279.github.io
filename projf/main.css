@@ -22,6 +22,7 @@ h2 {
   font-size: 35px;
   font-style: bold;
   font-family: 'Merriweather', serif;
+  position: center;
 }
 
 h3 {
@@ -79,7 +80,7 @@ header img.banner {
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  position: fixed;
+  position: center;
   top: 0;
   width: 100%;
 }
@@ -244,7 +245,7 @@ h3 {
 }
 
 .footer {
-  position: sticky;
+  position: center;
   left: 0;
   bottom: 0;
   width: 100%;
