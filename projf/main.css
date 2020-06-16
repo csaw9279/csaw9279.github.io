@@ -135,6 +135,18 @@ text-align: center;
     
     .flip-box-back {
       background-color: #555;
-      color: white;
+      color: black;
       transform: rotateY(180deg);
+    }
+
+
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      font-size: 15px;
     }
