@@ -15,6 +15,11 @@ header {
 }
 
 
+header img.banner {
+    width: 100vw;
+    position: absolute;
+}
+
 
 ul {
   list-style-type: none;
