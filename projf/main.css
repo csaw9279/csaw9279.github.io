@@ -38,7 +38,7 @@ header img.banner {
 }
 
 
-ul {
+.Navigationsleiste ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -69,3 +69,12 @@ li a:hover:not(.active) {
   background-color: #4CAF50;
 }
 
+.locations {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightblue;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
