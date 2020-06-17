@@ -40,11 +40,13 @@ h3 {
 .kursivp p {
 
   font-style: italic;
+  text-align: justify;
 }
 
 .normalp p {
 
   font-style: normal;
+  text-align: justify;
 }
 
 header img.banner {
