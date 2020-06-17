@@ -218,6 +218,12 @@ div.gallery img {
   transform: rotateY(180deg);
 }
 
+.RaftingInnsbruck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
 
 
 
