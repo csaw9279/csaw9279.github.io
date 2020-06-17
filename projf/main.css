@@ -6,6 +6,7 @@ body {
   font-family: "Karma";
   font-size: 18px;
   text-align: center;
+
 }
 
 header {
@@ -39,12 +40,15 @@ h3 {
 
   font-style: italic;
   text-align: justify;
+  margin: 1cm;
 }
 
 .normalp p {
 
   font-style: normal;
   text-align: justify;
+  margin: 1cm;
+
 }
 
 header img.banner {
