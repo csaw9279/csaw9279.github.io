@@ -51,10 +51,7 @@ h3 {
 
 }
 
-header img.banner {
-  width: 100vw;
-  position: absolute;
-}
+
 
 
 
@@ -344,4 +341,25 @@ h3 {
 .fa-android {
   background: #a4c639;
   color: white;
+}
+
+
+/* Quellen */
+
+
+#quelle {
+  margin-top: -30px;  
+  margin-left: 85px;   
+  font-weight: normal;  
+  font-size: 10px; 
+  color: #fff;              
+}
+
+#flipquelle {
+  margin-top: 0px;  
+  margin-left: 85px;   
+  font-weight: normal;  
+  font-size: 10px; 
+  color: #fff;    
+  text-align: end;          
 }
